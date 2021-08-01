@@ -11,8 +11,8 @@ func main() {
 }
 
 func FindOutlier(integers [] int) int {
-	holdEven:=[]int {}
-	holdOdd:=[] int{}
+	var holdEven []int
+	var holdOdd []int
 	for _, v:= range integers {
 
 		if v%2==0 {
@@ -22,7 +22,6 @@ func FindOutlier(integers [] int) int {
 			holdOdd= append(holdOdd, v)
 		}
 	}
-
 	if len(holdOdd)==1 {
 		return holdOdd[0]
 	}
@@ -30,3 +29,4 @@ func FindOutlier(integers [] int) int {
 	return holdEven[0]
 }
 
+//{{1,2,3}, {1,2,4} , {1,2,3}}
