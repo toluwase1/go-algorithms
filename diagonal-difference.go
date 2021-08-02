@@ -22,11 +22,12 @@ func diagonalDifference(arr [][]int32) int32 {
 		q 	q	q
  */
 //
-//public static int diagonalDifference(List<List<Integer>> arr) {
-//int leftdiagonal = 0, rightdiagonal = 0;
-//for(int i = 0, j = arr.get(0).size()-1; i < arr.get(0).size(); i++, j--){
-//leftdiagonal = leftdiagonal + arr.get(i).get(i);
-//rightdiagonal = rightdiagonal + arr.get(i).get(j);
-//}
-//return Math.abs(leftdiagonal - rightdiagonal);
-//}
+func diagonalDifference2(arr [][]int32) int32 {
+	leftdiag:=int32(0)
+	rightdiag:=int32(0)
+	for i , _ := range arr{
+		leftdiag+=arr[i][i]
+		rightdiag += arr[i][len(arr)-i-1]
+	}
+	return int32(int(math.Abs(float64(leftdiag - rightdiag))))
+}

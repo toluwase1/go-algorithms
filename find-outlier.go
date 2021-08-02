@@ -8,6 +8,7 @@ func main() {
 	slices:=[]int{1,2,4,6,8}
 	//FindOutlier(slices)
 	fmt.Println(FindOutlier(slices))
+	fmt.Println(findOutliers(slices))
 }
 
 func FindOutlier(integers [] int) int {
@@ -27,6 +28,24 @@ func FindOutlier(integers [] int) int {
 	}
 
 	return holdEven[0]
+}
+
+func findOutliers(integers [] int) int  {
+	evenContainer:= [] int {}
+	oddContainer:= [] int {}
+
+	for _,v := range integers {
+		if v%2==0 {
+			evenContainer = append(evenContainer, v)
+		} else {
+			oddContainer = append(oddContainer, v)
+		}
+	}
+
+	if len(evenContainer)==1 {
+		return evenContainer[0]
+	}
+		return oddContainer[0]
 }
 
 //{{1,2,3}, {1,2,4} , {1,2,3}}
