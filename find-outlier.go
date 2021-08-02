@@ -5,10 +5,14 @@ import "fmt"
 //loop through
 //check if even or odd
 func main() {
+
 	slices:=[]int{1,2,4,6,8}
+
 	//FindOutlier(slices)
 	fmt.Println(FindOutlier(slices))
 	fmt.Println(findOutliers(slices))
+	//fmt.Println(sockMerchant(4, []int{1,2,4,6,8} ))
+
 }
 
 func FindOutlier(integers [] int) int {
