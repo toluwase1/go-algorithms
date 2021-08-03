@@ -11,8 +11,12 @@ import "fmt"
 //buy
 //ebook
 func main() {
-	slices1:=[]int32{1,2,1,2,1,3,2}
-	fmt.Println(sockMerchant(7,slices1))
+	slices1:=[]int32{18,10,2,10,5,11,3,10}
+	/*
+	{3,2,1,2,1,3,2}
+	 */
+	//fmt.Println(sockMerchant(7,slices1))
+	fmt.Println(sortMethod(slices1))
 }
 func BubbleSort(array[] int32)[]int32 {
 	for i:=0; i< len(array)-1; i++ {
@@ -24,6 +28,7 @@ func BubbleSort(array[] int32)[]int32 {
 	}
 	return array
 }
+
 func sockMerchant(n int32, ar []int32) int32 {
 	count:=int32(0)
 	BubbleSort(ar)
@@ -34,6 +39,42 @@ func sockMerchant(n int32, ar []int32) int32 {
 		}
 	}
 	return count
+}
+
+func sortMethod(arr [] int32) []int32 {
+	//slices1:=[]int32{3,2,1,5,1,3,2}
+	length:= len(arr)
+	//sorting with single loop
+	for i:=0; i<length-1; i++ {
+		if arr[i]>arr[i+1] {
+			temp:= arr[i]
+			arr[i]=arr[i+1]
+			arr[i+1]=temp
+			i=-1
+		}
+	}
+	return arr
+	//	int length = arr.length;
+//	// Sorting using a single loop
+//	for (int j = 0; j < length - 1; j++) {
+//		// Checking the condition for two
+//		// simultaneous elements of the array
+//		if (arr[j] > arr[j + 1]) {
+//			// Swapping the elements.
+//			int temp = arr[j];
+//			arr[j] = arr[j + 1];
+//			arr[j + 1] = temp;
+//
+//			// updating the value of j = -1
+//			// so after getting updated for j++
+//			// in the loop it becomes 0 and
+//			// the loop begins from the start.
+//			j = -1;
+//		}
+//	}
+//	return arr;
+//}
+
 }
 
 // Write your code here
