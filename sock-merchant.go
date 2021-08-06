@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // concurrency vs parallelism
 //rob pike simplicity is complicated
@@ -19,8 +21,11 @@ func main() {
 	fmt.Println(sortMethod(slices1))
 }
 func BubbleSort(array[] int32)[]int32 {
+	// first loop iterates from position 0 to last position
 	for i:=0; i< len(array)-1; i++ {
+		//second loop iterates to second to the last position since last position is sorted already
 		for j:=0; j < len(array)-i-1; j++ {
+			//swapping occurs if position position[i]> position [i+1]
 			if (array[j] > array[j+1]) {
 				array[j], array[j+1] = array[j+1], array[j]
 			}
